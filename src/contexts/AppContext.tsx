@@ -1,8 +1,7 @@
-
 import React, { createContext, useContext, useState, ReactNode } from "react";
-import { v4 as uuidv4 } from "uuid";
 import { Product, Order, OrderStatus, OrderItem } from "@/types";
 import { mockProducts, mockOrders } from "@/data/mockData";
+import { api } from "@/services/api";
 
 interface AppContextType {
   // Products
@@ -40,43 +39,68 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [isAdmin, setIsAdmin] = useState(false);
   
   // Product management
-  const addProduct = (product: Omit<Product, "id">) => {
-    const newProduct = { ...product, id: uuidv4() };
-    setProducts([...products, newProduct]);
+  const addProduct = async (product: Omit<Product, "id">) => {
+    try {
+      const newProduct = { ...product, id: crypto.randomUUID() };
+      setProducts([...products, newProduct]);
+      // Ready for backend implementation
+    } catch (error) {
+      console.error('Error adding product:', error);
+    }
   };
   
-  const editProduct = (updatedProduct: Product) => {
-    setProducts(products.map(product => 
-      product.id === updatedProduct.id ? updatedProduct : product
-    ));
+  const editProduct = async (updatedProduct: Product) => {
+    try {
+      setProducts(products.map(product => 
+        product.id === updatedProduct.id ? updatedProduct : product
+      ));
+      // Ready for backend implementation
+    } catch (error) {
+      console.error('Error updating product:', error);
+    }
   };
   
-  const removeProduct = (productId: string) => {
-    setProducts(products.filter(product => product.id !== productId));
+  const removeProduct = async (productId: string) => {
+    try {
+      setProducts(products.filter(product => product.id !== productId));
+      // Ready for backend implementation
+    } catch (error) {
+      console.error('Error removing product:', error);
+    }
   };
   
   // Order management
-  const addOrder = (order: Omit<Order, "id" | "createdAt" | "status">) => {
-    const newOrder: Order = {
-      ...order,
-      id: uuidv4(),
-      status: "pending",
-      createdAt: new Date(),
-    };
-    setOrders([newOrder, ...orders]);
-    clearCart(); // Clear cart after order is placed
+  const addOrder = async (orderData: Omit<Order, "id" | "createdAt" | "status">) => {
+    try {
+      const newOrder = await api.createOrder(orderData);
+      setOrders([newOrder, ...orders]);
+      clearCart();
+    } catch (error) {
+      console.error('Error creating order:', error);
+    }
   };
   
-  const updateOrderStatus = (orderId: string, status: OrderStatus) => {
-    setOrders(orders.map(order => 
-      order.id === orderId ? { ...order, status } : order
-    ));
+  const updateOrderStatus = async (orderId: string, status: OrderStatus) => {
+    try {
+      await api.updateOrderStatus(orderId, status);
+      setOrders(orders.map(order => 
+        order.id === orderId ? { ...order, status } : order
+      ));
+    } catch (error) {
+      console.error('Error updating order status:', error);
+    }
   };
   
-  const getOrderById = (orderId: string) => {
-    return orders.find(order => order.id === orderId);
+  const getOrderById = async (orderId: string) => {
+    try {
+      const order = await api.getOrder(orderId);
+      return order;
+    } catch (error) {
+      console.error('Error fetching order:', error);
+      return orders.find(order => order.id === orderId);
+    }
   };
-  
+
   // Cart management
   const addToCart = (product: Product, quantity: number) => {
     const existingItem = cart.find(item => item.productId === product.id);
