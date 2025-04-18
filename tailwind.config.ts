@@ -52,6 +52,46 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+                // Custom colors for produce palace
+                produce: {
+                    50: '#f7faf5',
+                    100: '#edf6e9',
+                    200: '#d5eac9',
+                    300: '#b3d89d',
+                    400: '#8ac169',
+                    500: '#68a83f', // Primary green
+                    600: '#4e8c2a',
+                    700: '#3d7022',
+                    800: '#325a1d',
+                    900: '#2a4a1a',
+                    950: '#122a0a',
+                },
+                orange: {
+                    50: '#fff8ed',
+                    100: '#ffefd5',
+                    200: '#ffdcab',
+                    300: '#ffc275',
+                    400: '#ff9f3c', // For CTAs
+                    500: '#ff7a00',
+                    600: '#e45e00',
+                    700: '#bd4500',
+                    800: '#9a3800',
+                    900: '#7e3000',
+                    950: '#461600',
+                },
+                soil: {
+                    50: '#f8f6f4',
+                    100: '#ede9e4',
+                    200: '#dbd2c7',
+                    300: '#c3b4a3',
+                    400: '#a99179',
+                    500: '#8f7a62', // Earth tones
+                    600: '#7a6551',
+                    700: '#655344',
+                    800: '#54463a',
+                    900: '#483c32',
+                    950: '#27211c',
+                },
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
