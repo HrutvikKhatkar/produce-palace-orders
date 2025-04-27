@@ -140,6 +140,50 @@ export const mockOrders: Order[] = [
 
 // Admin credentials
 export const adminCredentials = {
-  email: "admin@producepalace.com",
+  email: "adminn@producepalace.com",
   password: "admin123"
 };
+
+
+// import { Product, Order, OrderStatus } from "@/types";
+// import { v4 as uuidv4 } from "uuid";
+
+// // Declare variables to hold the fetched data
+// let mockProducts: Product[] = [];
+// let mockOrders: Order[] = [];
+// let adminCredentials = { email: "", password: "" };
+
+// // Fetch data from the backend (assuming your API endpoints are '/api/products', '/api/orders', and '/api/admin')
+// const fetchData = async () => {
+//   console.log("casdnckjnadsvksdfvmn")
+//   console.log("casdnckjnadsvksdfvmn")
+//   console.log("casdnckjnadsvksdfvmn")
+//   console.log("casdnckjnadsvksdfvmn")
+//   try {
+//     // Fetching products
+//     const productsResponse = await fetch("/api/products");
+//     if (!productsResponse.ok) throw new Error("Failed to fetch products");
+//     mockProducts = await productsResponse.json();
+    
+//     // Fetching orders
+//     const ordersResponse = await fetch("/api/orders");
+//     if (!ordersResponse.ok) throw new Error("Failed to fetch orders");
+//     mockOrders = await ordersResponse.json();
+
+//     // Fetching admin credentials
+//     const adminResponse = await fetch("/api/admin");
+//     if (!adminResponse.ok) throw new Error("Failed to fetch admin credentials");
+//     adminCredentials = await adminResponse.json();
+
+//     console.log("Products:", mockProducts);
+//     console.log("Orders:", mockOrders);
+//     console.log("Admin Credentials:", adminCredentials);
+//   } catch (error) {
+//     console.error("Error fetching data:", error);
+//   }
+// };
+
+// // Call the function to fetch data
+// fetchData();
+
+// export {mockOrders, mockProducts, adminCredentials}

@@ -5,9 +5,13 @@
     { "path": "./tsconfig.node.json" }
   ],
   "compilerOptions": {
-    "baseUrl": ".",
+    // "baseUrl": ".",
+    // "paths": {
+    //   "@/*": ["./src/*"]
+    // },
+    "baseUrl": "./src",  // Make sure to set baseUrl to the root of your src directory
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["*"]  // This tells TypeScript to resolve "@" as the src directory
     },
     "noImplicitAny": false,
     "noUnusedParameters": false,
