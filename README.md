@@ -1,73 +1,27 @@
-# Welcome to your Lovable project
+# Bulk Vegetable/Fruit Ordering Platform
 
-## Project info
+A web application that facilitates bulk vegetable/fruit orders, allowing buyers to browse products, place bulk orders, and track order status. Admins can manage orders and inventory efficiently.
 
-**URL**: https://lovable.dev/projects/86483863-0707-4593-bd81-f0f65a0dd4ca
+## Features
 
-## How can I edit this code?
+### For Buyers:
+- **Browse Products**: View a catalog of available vegetables/fruits with basic details (name, price per unit).
+- **Place Orders**: Buyers can place bulk orders specifying item name, quantity, and delivery details (name, contact, address).
+- **Track Orders**: Buyers can track the status of their orders (Pending, In Progress, Delivered).
 
-There are several ways of editing your application.
+### For Admins:
+- **Order Management**: View and manage orders, with the ability to update the status of orders.
+- **Inventory Management**: Add, edit, and remove products from the catalog.
 
-**Use Lovable**
+## Tech Stack
+- **Frontend**: Next.js (React framework)
+- **Backend**: Next.js API routes (or Express/Flask)
+- **Database**: PostgreSQL hosted on Neon.tech (or Docker containerized Postgres)
+- **Deployment**: Vercel (preferred) or Netlify
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/86483863-0707-4593-bd81-f0f65a0dd4ca) and start prompting.
+## Setup Instructions
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/86483863-0707-4593-bd81-f0f65a0dd4ca) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+### 1. Clone the Repository
+```bash
+git clone https://github.com/yourusername/bulk-ordering-platform.git
+cd bulk-ordering-platform
