@@ -1,4 +1,3 @@
-It looks like you want a complete README for your Bulk Vegetable/Fruit Ordering Platform project. Here’s the ready-to-use `README.md` you can copy directly into your project:
 
 # Bulk Vegetable/Fruit Ordering Platform
 
